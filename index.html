@@ -1,1 +1,929 @@
-<!DOCTYPE html> <html lang="sk"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>KALLO SONG – Milan Kalinay</title> <style> body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f5f5f5; color: #222; } .card { max-width: 420px; margin: 30px auto; background: white; border-radius: 24px; padding: 35px 25px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.12); } .logo { font-size: 32px; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; } .name { font-size: 22px; font-weight: bold; } .subtitle { color: #777; margin: 8px 0 25px; } .button { display: block; padding: 15px; margin: 12px 0; border-radius: 12px; text-decoration: none; font-size: 17px; font-weight: bold; background: #111; color: white; } .button:hover { opacity: 0.85; } .facebook { background: #1877f2; } .save { background: #d4a017; color: white; } </style> </head> <body> <div class="card"> <div class="logo">KALLO SONG</div> <div class="name">Milan Kalinay</div> <div class="subtitle"> Hudba • Spev • Produkcia </div> <a class="button" href="tel:+421905380062"> 📞 Zavolať </a> <a class="button" href="mailto:kalllo.song@gmail.com"> ✉️ E-mail </a> <a class="button facebook" href="https://www.facebook.com/profile.php?id=61572127977301" target="_blank"> Facebook </a> <a class="button save" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AKalinay%3BMilan%3B%3B%3B%0AFN%3AMilan%20Kalinay%0AORG%3AKALLO%20SONG%0ATEL%3BTYPE%3DCELL%3A%2B421905380062%0AEMAIL%3Bkalllo.song%40gmail.com%0AURL%3Ahttps%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61572127977301%0AEND%3AVCARD" download="Milan_Kalinay.vcf"> 💾 Uložiť kontakt </a> </div> </body> </html>
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050609">
+
+<title>KALLO SONG – Milan Kalinay</title>
+
+<style>
+
+:root {
+    --red: #d12620;
+    --red-dark: #a91916;
+    --cream: #f7e2b1;
+    --white: #ffffff;
+    --dark: #07080c;
+    --navy: #171a25;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+
+    background:
+        radial-gradient(circle at 12% 18%, rgba(170,65,25,.30), transparent 25%),
+        radial-gradient(circle at 85% 45%, rgba(150,45,20,.20), transparent 30%),
+        linear-gradient(110deg, #030407 0%, #0c0b0d 48%, #170c0a 100%);
+}
+
+/* jemný efekt svetla v pozadí */
+
+body:before {
+    content: "";
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: 30%;
+    background: rgba(180,65,20,.12);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* hlavný obal */
+
+.page {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 28px 18px 35px;
+}
+
+/* hlavná karta */
+
+.card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: calc(100vh - 56px);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94) 0%,
+            rgba(5,5,7,.82) 52%,
+            rgba(25,10,7,.72) 100%
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65);
+
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+/* dekoratívne svetlo napravo – vytvára atmosféru gitary */
+
+.card:after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    top: 120px;
+
+    width: 430px;
+    height: 720px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(140,65,28,.48) 0%,
+            rgba(65,25,12,.28) 35%,
+            transparent 70%
+        );
+
+    transform: rotate(-12deg);
+
+    pointer-events: none;
+}
+
+/* obsah musí byť nad dekoráciou */
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+/* LOGO */
+
+.logo-area {
+    text-align: center;
+    padding-top: 35px;
+}
+
+.logo {
+    width: 145px;
+    max-width: 45vw;
+    height: auto;
+
+    display: block;
+    margin: 0 auto 18px;
+
+    filter:
+        drop-shadow(0 8px 18px rgba(0,0,0,.45));
+}
+
+/* meno */
+
+.name {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 9vw, 58px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    letter-spacing: -.8px;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.65);
+}
+
+/* HUDOBNÍK */
+
+.profession {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 18px;
+
+    color: var(--red);
+
+    font-size: 20px;
+
+    letter-spacing: 7px;
+
+    font-weight: 500;
+}
+
+.profession:before,
+.profession:after {
+    content: "";
+
+    width: 70px;
+    height: 1px;
+
+    background: var(--red);
+}
+
+/* úvodný text */
+
+.intro {
+    text-align: center;
+
+    margin: 25px auto 30px;
+
+    padding: 0 20px;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    color: rgba(255,255,255,.92);
+}
+
+.intro strong {
+    display: block;
+
+    font-size: 20px;
+
+    margin-bottom: 3px;
+}
+
+/* kontaktné tlačidlá */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    padding: 0 22px;
+}
+
+.button {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 68px;
+
+    padding: 10px 16px;
+
+    border-radius: 17px;
+
+    text-decoration: none;
+
+    color: #151515;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(255,255,255,.98),
+            rgba(238,235,231,.94)
+        );
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.28);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.38);
+}
+
+.button:active {
+    transform: scale(.985);
+}
+
+/* ikonka */
+
+.icon {
+    width: 45px;
+    height: 45px;
+
+    flex: 0 0 45px;
+
+    margin-right: 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f8eee5;
+
+    color: var(--red);
+}
+
+/* SVG ikonky */
+
+.icon svg {
+    width: 25px;
+    height: 25px;
+
+    stroke: currentColor;
+
+    fill: none;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.button-text {
+    flex: 1;
+
+    font-size: 16px;
+
+    line-height: 1.2;
+}
+
+.button-text strong {
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.button-text small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+.arrow {
+    color: var(--red);
+
+    font-size: 29px;
+
+    font-weight: 300;
+
+    margin-left: 8px;
+}
+
+/* ULOŽIŤ KONTAKT */
+
+.save-contact {
+    margin-top: 3px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #e22a22,
+            #bd1714
+        );
+
+    color: white;
+}
+
+.save-contact .icon {
+    background: rgba(255,255,255,.15);
+
+    color: white;
+}
+
+.save-contact .button-text strong {
+    font-size: 17px;
+}
+
+.save-contact .button-text small {
+    color: rgba(255,255,255,.78);
+}
+
+.save-contact .arrow {
+    display: none;
+}
+
+/* sociálne siete */
+
+.follow {
+    margin-top: 34px;
+
+    padding: 0 22px;
+}
+
+.follow-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    justify-content: center;
+
+    color: #ddd;
+
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 22px;
+}
+
+.follow-title:before,
+.follow-title:after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: var(--red);
+}
+
+.socials {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    text-align: center;
+}
+
+.social {
+    text-decoration: none;
+
+    color: white;
+}
+
+.social-icon {
+    width: 54px;
+    height: 54px;
+
+    margin: 0 auto 8px;
+
+    border: 2px solid var(--red);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--red);
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+.social:hover .social-icon {
+    background: var(--red);
+
+    color: white;
+}
+
+.social-icon svg {
+    width: 25px;
+    height: 25px;
+
+    fill: currentColor;
+}
+
+.social-name {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,.85);
+}
+
+/* päta */
+
+.footer {
+    text-align: center;
+
+    padding: 30px 20px 5px;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.heart {
+    color: var(--red);
+
+    font-size: 21px;
+
+    margin-right: 5px;
+}
+
+.copyright {
+    margin-top: 3px;
+
+    color: rgba(255,255,255,.55);
+}
+
+/* mobil */
+
+@media (max-width: 420px) {
+
+    .page {
+        padding: 0;
+    }
+
+    .card {
+        border-radius: 0;
+
+        min-height: 100vh;
+
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .logo-area {
+        padding-top: 28px;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .name {
+        font-size: 38px;
+    }
+
+    .profession {
+        font-size: 17px;
+
+        letter-spacing: 5px;
+    }
+
+    .profession:before,
+    .profession:after {
+        width: 38px;
+    }
+
+    .intro {
+        font-size: 15px;
+    }
+
+    .button {
+        min-height: 63px;
+    }
+
+    .social-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="card">
+
+<div class="content">
+
+<!-- LOGO + MENO -->
+
+<header class="logo-area">
+
+<img
+    src="kallo_song_logo.png"
+    class="logo"
+    alt="KALLO SONG"
+>
+
+<h1 class="name">
+    Milan Kalinay
+</h1>
+
+<div class="profession">
+    HUDOBNÍK
+</div>
+
+</header>
+
+
+<!-- ÚVOD -->
+
+<div class="intro">
+
+<strong>Hudba, ktorá spája.</strong>
+
+Živé vystúpenia, gitara, spev a dobrá nálada.
+
+</div>
+
+
+<!-- KONTAKTY -->
+
+<div class="buttons">
+
+
+<!-- TELEFÓN -->
+
+<a
+    class="button"
+    href="tel:+421905380062"
+>
+
+<div class="icon">
+
+<svg viewBox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2
+19.79 19.79 0 0 1-8.63-3.07
+19.5 19.5 0 0 1-6-6
+A19.79 19.79 0 0 1
+2.12 4.18
+2 2 0 0 1
+5.12 2h3a2 2 0 0 1
+2 1.72
+12.84 12.84 0 0 0
+.7 3.19
+2 2 0 0 1-.45 2.11
+L9.09 10.27
+a16 16 0 0 0
+6 6l1.25-1.25
+a2 2 0 0 1
+2.11-.45
+12.84 12.84 0 0 0
+3.19.7A2 2 0 0 1
+22 16.92z"/>
+</svg>
+
+</div>
+
+<div class="button-text">
+
+<strong>Zavolať</strong>
+
+<small>+421 905 380 062</small>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+
+<!-- EMAIL -->
+
+<a
+    class="button"
+    href="mailto:kalllo.song@gmail.com"
+>
+
+<div class="icon">
+
+<svg viewBox="0 0 24 24">
+<rect x="3" y="5" width="18" height="14" rx="2"/>
+<polyline points="3,7 12,13 21,7"/>
+</svg>
+
+</div>
+
+<div class="button-text">
+
+<strong>E-mail</strong>
+
+<small>kalllo.song@gmail.com</small>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+
+<!-- FACEBOOK -->
+
+<a
+    class="button"
+    href="https://www.facebook.com/profile.php?id=61572127977301"
+    target="_blank"
+    rel="noopener"
+>
+
+<div class="icon">
+
+<svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none;">
+<path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.7.3-1 1-1z"/>
+</svg>
+
+</div>
+
+<div class="button-text">
+
+<strong>Facebook</strong>
+
+<small>KALLO SONG</small>
+
+</div>
+
+<div class="arrow">›</div>
+
+</a>
+
+
+<!-- ULOŽIŤ KONTAKT -->
+
+<a
+    class="button save-contact"
+    href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3AKalinay%3BMilan%3B%3B%3B%0AFN%3AMilan%20Kalinay%0AORG%3AKALLO%20SONG%0ATEL%3BTYPE%3DCELL%3A%2B421905380062%0AEMAIL%3BTYPE%3DINTERNET%3Akalllo.song%40gmail.com%0AURL%3Ahttps%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61572127977301%0AEND%3AVCARD"
+    download="Milan_Kalinay.vcf"
+>
+
+<div class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<circle cx="9" cy="8" r="3"/>
+
+<path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/>
+
+<path d="M17 8h4"/>
+
+<path d="M19 6v4"/>
+
+</svg>
+
+</div>
+
+<div class="button-text">
+
+<strong>ULOŽIŤ KONTAKT</strong>
+
+<small>Uložte si moje kontakty do telefónu</small>
+
+</div>
+
+</a>
+
+</div>
+
+
+<!-- SOCIÁLNE SIETE -->
+
+<section class="follow">
+
+<div class="follow-title">
+    SLEDUJ MA
+</div>
+
+<div class="socials">
+
+
+<!-- YOUTUBE -->
+
+<a
+    class="social"
+    href="#"
+    target="_blank"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1
+C19.5 3.5 12 3.5 12 3.5
+s-7.5 0-9.4.6A3 3 0 0 0
+.5 6.2 31 31 0 0 0 0 12
+a31 31 0 0 0 .5 5.8
+3 3 0 0 0 2.1 2.1
+c1.9.6 9.4.6 9.4.6
+s7.5 0 9.4-.6
+a3 3 0 0 0 2.1-2.1
+A31 31 0 0 0 24 12
+a31 31 0 0 0-.5-5.8z"/>
+<polygon points="9.75,8.5 15.75,12 9.75,15.5"
+fill="white"/>
+</svg>
+
+</div>
+
+<div class="social-name">
+YOUTUBE
+</div>
+
+</a>
+
+
+<!-- SPOTIFY -->
+
+<a
+    class="social"
+    href="#"
+    target="_blank"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<circle cx="12" cy="12" r="10"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
+
+<path d="M7 9.5c3.5-1 6.5-.8 10 .4"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"/>
+
+<path d="M7.5 12.5c3-0.8 5.7-.5 8.5.5"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"/>
+
+<path d="M8 15.3c2.4-.5 4.6-.3 6.8.5"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"/>
+
+</svg>
+
+</div>
+
+<div class="social-name">
+SPOTIFY
+</div>
+
+</a>
+
+
+<!-- INSTAGRAM -->
+
+<a
+    class="social"
+    href="#"
+    target="_blank"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<rect x="3" y="3" width="18" height="18"
+rx="5"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
+
+<circle cx="12" cy="12" r="4"
+fill="none"
+stroke="currentColor"
+stroke-width="2"/>
+
+<circle cx="17.5" cy="6.5" r="1"
+fill="currentColor"/>
+
+</svg>
+
+</div>
+
+<div class="social-name">
+INSTAGRAM
+</div>
+
+</a>
+
+
+<!-- FACEBOOK -->
+
+<a
+    class="social"
+    href="https://www.facebook.com/profile.php?id=61572127977301"
+    target="_blank"
+    rel="noopener"
+>
+
+<div class="social-icon">
+
+<svg viewBox="0 0 24 24">
+
+<path
+d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v8h4v-8h3.2l.8-4H13V9c0-.7.3-1 1-1z"
+/>
+
+</svg>
+
+</div>
+
+<div class="social-name">
+FACEBOOK
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PÄTA -->
+
+<footer class="footer">
+
+<div>
+<span class="heart">♥</span>
+Ďakujem, že podporujete živú hudbu.
+</div>
+
+<div class="copyright">
+© 2026 KALLO SONG – Milan Kalinay
+</div>
+
+</footer>
+
+</div>
+
+</div>
+
+</div>
+
+
+</body>
+</html>
